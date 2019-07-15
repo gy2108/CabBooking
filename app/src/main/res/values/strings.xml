@@ -1,9 +1,3 @@
 <resources>
     <string name="app_name">Book Your Cab</string>
-    <array name="offers">
-        <item>Upto 50% Cash-Back On First Ride</item>
-        <item>Lucky Free Ride</item>
-        <item>Long Distance Discount</item>
-        <item>Get Rs50 Cash-Back</item>
-    </array>
 </resources>
