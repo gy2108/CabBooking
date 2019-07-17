@@ -1,11 +1,8 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fillViewport="true"
-    tools:context="com.example.bookyourcab.MainActivity">
-
+    android:fillViewport="true">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -25,14 +22,13 @@
             android:layout_height="wrap_content"
             android:background="#ffffff"
             android:fontFamily="sans-serif-thin"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="150dp"
             android:paddingLeft="10dp"
             android:text="Register "
             android:textAlignment="textStart"
             android:textColor="#145789"
             android:textSize="45sp" />
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,26 +49,43 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/black"
                 android:inputType="text"/>
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/password"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:backgroundTint="@color/black"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="1dp"
+                android:hint="Email Id"/>
+            <EditText
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="phone"
+                android:layout_marginTop="1dp"
+                android:hint="Contact Number"/>
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/black"
                 android:inputType="textPassword"
-                android:layout_marginTop="1dp"/>
-
+                android:layout_marginTop="1dp"
+                android:hint="Password"/>
+            <EditText
+                android:id="@+id/confirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="textPassword"
+                android:layout_marginTop="1dp"
+                android:hint="Re-Enter Password"/>
             <!-- Signup button -->
-            <Button android:id="@+id/login_button"
+            <Button android:id="@+id/btn_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Register"
                 android:layout_marginTop="30dp"
                 android:elevation="4dp"
                 android:minWidth="88dp"
@@ -82,12 +95,12 @@
                 android:textColor="@android:color/black"
                 />
             <!-- Link to Registration Screen -->
-            <TextView android:id="@+id/link_to_register"
+            <TextView android:id="@+id/link_to_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dip"
                 android:layout_marginBottom="20dip"
-                android:text="New to InfyCab? Register here"
+                android:text="Have an Account? Login."
                 android:gravity="center"
                 android:textSize="15dp"
                 android:textColor="#0b84aa"
@@ -96,4 +109,3 @@
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
-

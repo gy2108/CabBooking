@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_page"
+    android:divider="#e0e2e4">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="163dp"
+        android:paddingBottom="5dp"
+        android:background="#ffffff"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="Avail offers"
+        android:textAlignment="textStart"
+        android:textColor="#145789"
+        android:textSize="45sp"
+        android:textStyle="normal" />
+
+    <!--<ListView
+        android:id="@+id/offerList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="236dp"
+        android:layout_gravity="center_horizontal"
+        android:divider="#e0e2e4"
+        android:dividerHeight="1dp"
+        android:elevation="2dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:footerDividersEnabled="true"
+        android:focusableInTouchMode="true"
+        android:headerDividersEnabled="true"
+        android:textAlignment="center"
+        android:theme="@style/Base.TextAppearance.AppCompat.Body1"
+        android:cacheColorHint="#c6e3f7"
+        android:minHeight="48dp" />
+
+-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView6"
+        android:padding="20dp"
+        android:scrollbars="vertical" />
+
+
+</RelativeLayout>
