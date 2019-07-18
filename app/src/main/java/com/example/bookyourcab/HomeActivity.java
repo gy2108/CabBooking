@@ -34,7 +34,7 @@ public class HomeActivity extends Activity {
                 Intent intent = null;
                 switch (i){
                     case 0:
-                        intent = new Intent(HomeActivity.this, HistoryActivity.class);
+                        intent = new Intent(HomeActivity.this, ProfileActivity.class);
                         break;
                     case 1:
                         intent = new Intent(HomeActivity.this, HistoryActivity.class);
@@ -43,7 +43,7 @@ public class HomeActivity extends Activity {
                         intent = new Intent(HomeActivity.this, HistoryActivity.class);
                         break;
                     case 3:
-                        intent = new Intent(HomeActivity.this, HistoryActivity.class);
+                        intent = new Intent(HomeActivity.this, OffersActivity.class);
                         break;
                 }
                 startActivity(intent);

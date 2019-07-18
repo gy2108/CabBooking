@@ -40,9 +40,7 @@
         android:textAlignment="center"
         android:theme="@style/Base.TextAppearance.AppCompat.Body1"
         android:cacheColorHint="#c6e3f7"
-        android:minHeight="48dp" />
-
--->
+        android:minHeight="48dp" />-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

@@ -20,9 +20,6 @@ import java.util.logging.Logger;
 
 public class MainActivity extends AppCompatActivity{
 
-    /*ListView offers;
-    List<String> listOfOffers;*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,41 +35,15 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-//        offers = (ListView) findViewById(R.id.offerList);
-        /*listOfOffers = new ArrayList<>();
-        listOfOffers.add("Upto 50% Cash-Back On first Ride");
-        listOfOffers.add("Lucky Free Ride");
-        listOfOffers.add("Long Distance Discount");
-        listOfOffers.add("Get Rs50 cash-back");
-        listOfOffers.add("Upto 50% Cash-Back On first Ride");
-        listOfOffers.add("Lucky Free Ride");
-        listOfOffers.add("Long Distance Discount");
-        listOfOffers.add("Get Rs50 cash-back");
-        listOfOffers.add("Upto 50% Cash-Back On first Ride");
-        listOfOffers.add("Lucky Free Ride");
-        listOfOffers.add("Long Distance Discount");
-        listOfOffers.add("Get Rs50 cash-back");
-        listOfOffers.add("Upto 50% Cash-Back On first Ride");
-        listOfOffers.add("Lucky Free Ride");
-        listOfOffers.add("Long Distance Discount");
-        listOfOffers.add("Get Rs50 cash-back");
-        listOfOffers.add("Upto 50% Cash-Back On first Ride");
-        listOfOffers.add("Lucky Free Ride");
-        listOfOffers.add("Long Distance Discount");
-        listOfOffers.add("Get Rs50 cash-back");
+        TextView linkToRegister = findViewById(R.id.link_to_register);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        OfferAdapter offerAdapter = new OfferAdapter(MainActivity.this, listOfOffers);
-        recyclerView.setAdapter(offerAdapter);*/
-        /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listOfOffers);
-        offers.setAdapter(adapter);
-        offers.setOnItemClickListener(this);*/
+        linkToRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    /*public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-        String value = parent.getItemAtPosition(position).toString();
-        Log.d("Item Clicked", value);
-    }*/
 }
