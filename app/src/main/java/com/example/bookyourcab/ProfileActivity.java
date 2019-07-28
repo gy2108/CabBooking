@@ -27,7 +27,7 @@ public class ProfileActivity extends Activity {
         sqLiteDatabase=myDBHelper.getWritableDatabase();
 
         Cursor cur = sqLiteDatabase.query(MyDBHelper.TABLE_NAME, new String[]{MyDBHelper.EMP_NAME, MyDBHelper.EMP_EMAIL,
-                    MyDBHelper.EMP_PHONE}, null, null,
+                    MyDBHelper.EMP_PHONE, MyDBHelper.EMP_PWD}, null, null,
                 null, null, null);
         cur.moveToFirst();
 
@@ -36,9 +36,12 @@ public class ProfileActivity extends Activity {
         phone.setText(cur.getString(2));
 
         while(!cur.isAfterLast()){
+
             Toast.makeText(this,"Name  is  "+cur.getString(0)+ "  and Email is  "+
                     cur.getString(1),Toast.LENGTH_LONG).show();
             cur.moveToNext();
+
+
         }
         cur.close();
 

@@ -27,7 +27,7 @@
             android:fontFamily="sans-serif-thin"
             android:layout_marginTop="300dp"
             android:paddingLeft="10dp"
-            android:text="Register "
+            android:text="Login "
             android:textAlignment="textStart"
             android:textColor="#145789"
             android:textSize="45sp" />

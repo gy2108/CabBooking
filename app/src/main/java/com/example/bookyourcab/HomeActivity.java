@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,8 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-
+//        Intent receive = getIntent();
+//        Toast.makeText(getBaseContext(), "Welcome "+receive.getStringExtra("USERNAME"), Toast.LENGTH_LONG);
         gridView = findViewById(R.id.grid_view);
         iconList.add(R.drawable.profile);
         iconList.add(R.drawable.ride);
