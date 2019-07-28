@@ -19,8 +19,8 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-//        Intent receive = getIntent();
-//        Toast.makeText(getBaseContext(), "Welcome "+receive.getStringExtra("USERNAME"), Toast.LENGTH_LONG);
+        final Intent receive = getIntent();
+        Toast.makeText(getBaseContext(), "Welcome "+receive.getStringExtra("USERNAME"), Toast.LENGTH_LONG).show();
         gridView = findViewById(R.id.grid_view);
         iconList.add(R.drawable.profile);
         iconList.add(R.drawable.ride);
@@ -37,6 +37,8 @@ public class HomeActivity extends Activity {
                 switch (i){
                     case 0:
                         intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                        intent.putExtra("USERNAME", receive.getStringExtra("USERNAME"));
+                        intent.putExtra("EMAIL", receive.getStringExtra("EMAIL"));
                         break;
                     case 1:
                         intent = new Intent(HomeActivity.this, HistoryActivity.class);

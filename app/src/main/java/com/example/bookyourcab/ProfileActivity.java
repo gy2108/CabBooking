@@ -1,9 +1,11 @@
 package com.example.bookyourcab;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,26 +25,29 @@ public class ProfileActivity extends Activity {
         email = findViewById(R.id.email);
         phone = findViewById(R.id.phone_number);
 
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("USERNAME");
+        String mail = intent.getStringExtra("EMAIL");
+
         myDBHelper=new MyDBHelper(this);
         sqLiteDatabase=myDBHelper.getWritableDatabase();
 
         Cursor cur = sqLiteDatabase.query(MyDBHelper.TABLE_NAME, new String[]{MyDBHelper.EMP_NAME, MyDBHelper.EMP_EMAIL,
-                    MyDBHelper.EMP_PHONE, MyDBHelper.EMP_PWD}, null, null,
+                    MyDBHelper.EMP_PHONE, MyDBHelper.EMP_PWD}, MyDBHelper.EMP_EMAIL+"=?", new String[]{mail},
                 null, null, null);
-        cur.moveToFirst();
 
+        cur.moveToFirst();
+//        while(!cur.isAfterLast()){
+        Log.d("DEBUG", cur.getString(0));
+        Log.d("DEBUG", cur.getString(1));
+        Log.d("DEBUG", cur.getString(2));
         name.setText(cur.getString(0));
         email.setText(cur.getString(1));
         phone.setText(cur.getString(2));
-
-        while(!cur.isAfterLast()){
-
-            Toast.makeText(this,"Name  is  "+cur.getString(0)+ "  and Email is  "+
-                    cur.getString(1),Toast.LENGTH_LONG).show();
-            cur.moveToNext();
-
-
-        }
+//            cur.moveToNext();
+//        }
+        Toast.makeText(this,"Name  is  "+cur.getString(0)+ "  and Email is  "+
+                cur.getString(1),Toast.LENGTH_LONG).show();
         cur.close();
 
         /*sharedPreferences = getSharedPreferences("userdata", MODE_PRIVATE);

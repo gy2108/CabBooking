@@ -64,7 +64,8 @@
                 android:backgroundTint="@color/black"
                 android:inputType="phone"
                 android:layout_marginTop="1dp"
-                android:hint="Contact Number"/>
+                android:hint="Contact Number"
+                android:maxLength="10"/>
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"

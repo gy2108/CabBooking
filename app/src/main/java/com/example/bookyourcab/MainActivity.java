@@ -44,13 +44,14 @@ public class MainActivity extends AppCompatActivity{
                 myDBHelper = new MyDBHelper(getBaseContext());
                 sqLiteDatabase = myDBHelper.getWritableDatabase();
 
-                Cursor cur = sqLiteDatabase.query(MyDBHelper.TABLE_NAME, new String[]{MyDBHelper.EMP_NAME,MyDBHelper.EMP_PWD},
+                Cursor cur = sqLiteDatabase.query(MyDBHelper.TABLE_NAME, new String[]{MyDBHelper.EMP_NAME,MyDBHelper.EMP_PWD,
+                                            MyDBHelper.EMP_EMAIL},
                         null, null,
                         null, null, null);
 //                cur.moveToFirst();
                 boolean flag = false;
                 while(cur.moveToNext()){
-                    if(cur.getString(0).equalsIgnoreCase(username.getText().toString()) &&
+                    if(cur.getString(0).equalsIgnoreCase(username.getText().toString().trim()) &&
                         cur.getString(1).equals(password.getText().toString())){
                         flag = true;
                         break;
@@ -59,7 +60,8 @@ public class MainActivity extends AppCompatActivity{
                 if(flag){
                     String user = cur.getString(0);
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-//                    intent.putExtra("USERNAME", user);
+                    intent.putExtra("USERNAME", user);
+                    intent.putExtra("EMAIL", cur.getString(2));
                     startActivity(intent);
                 } else {
                     Toast.makeText(getBaseContext(), "Invalid UserName Or Password !!!!", Toast.LENGTH_LONG).show();
